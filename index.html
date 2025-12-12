@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnalisaMega</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>AnalisaMega • Estatísticas</h1>
+            <p>Análise completa dos números mais sorteados da Mega-Sena</p>
+
+            <div class="search-box">
+                <input type="number" id="search" placeholder="Buscar número (1 a 60)..." min="1" max="60">
+            </div>
+
+            <button id="themeToggle">🌙 Alternar Tema</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>🎯 Números Mais Frequentes</h2>
+            <ul id="top10"></ul>
+        </section>
+
+        <section class="card">
+            <h2>📈 Frequência Geral (1 a 60)</h2>
+            <div class="chart-container">
+                <canvas id="grafico"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Arthur Lacerda</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
