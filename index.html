@@ -1,51 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnalisaMega</title>
-    <link rel="shortcut icon" href="favicon_io/favicon.ico">
-    <link rel="stylesheet" href="style.css">
-
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AnalisaMega • Estatísticas</title>
+  <link rel="shortcut icon" href="favicon_io/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>AnalisaMega • Estatísticas</h1>
-            <p>Análise completa dos números mais sorteados da Mega-Sena</p>
-
-            <div class="search-box">
-                <input type="number" id="search" placeholder="Buscar número (1 a 60)..." min="1" max="60">
-            </div>
-
-            <button id="themeToggle">🌙 Alternar Tema</button>
+  <div class="app-shell">
+    <header class="hero" role="banner">
+      <div class="hero-inner">
+        <div class="brand">
+          <h1>AnalisaMega</h1>
+          <p class="tagline">Estatísticas • Números mais sorteados da Mega-Sena</p>
         </div>
+
+        <div class="controls">
+          <div class="search">
+            <label for="search" class="vh">Buscar número (1 a 60)</label>
+            <input id="search" type="number" min="1" max="60" placeholder="Buscar número (1 a 60)…">
+          </div>
+
+          <div class="buttons">
+            <button id="themeToggle" aria-pressed="false" title="Alternar tema">🌗</button>
+            <button id="refresh" title="Recarregar dados">🔁</button>
+            <button id="exportCsv" title="Exportar CSV">⬇ CSV</button>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <main class="container">
+    <main class="layout" role="main">
+      <aside class="card summary" aria-labelledby="summaryTitle">
+        <h2 id="summaryTitle">Resumo</h2>
+        <p id="totalInfo">Carregando dados…</p>
+        <div class="legend">
+          <div><span class="swatch swatch-1"></span>Frequentemente sorteados</div>
+          <div><span class="swatch swatch-2"></span>Menos frequentes</div>
+        </div>
+      </aside>
 
-        <section class="card">
-            <h2>🎯 Números Mais Frequentes</h2>
-            <ul id="top10"></ul>
-        </section>
+      <section class="card topcard" aria-labelledby="topTitle">
+        <h2 id="topTitle">🎯 Top 10 (Frequência + %)</h2>
+        <ul id="top10" aria-live="polite"></ul>
+      </section>
 
-        <section class="card">
-            <h2>📈 Frequência Geral (1 a 60)</h2>
-            <div class="chart-container">
-                <canvas id="grafico"></canvas>
-            </div>
-        </section>
-
+      <section class="card chartcard" aria-labelledby="chartTitle">
+        <h2 id="chartTitle">📈 Frequência Geral (1–60)</h2>
+        <div class="chart-wrap">
+          <canvas id="grafico" role="img" aria-label="Gráfico de barras da frequência dos números"></canvas>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>Desenvolvido por Arthur Lacerda</p>
+    <footer class="footer">
+      <small>Desenvolvido por Arthur Lacerda</small>
     </footer>
+  </div>
 
-    <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
