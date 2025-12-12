@@ -2,255 +2,255 @@
     "numeros": [
         {
             "numero": 1,
-            "frequencia": 254
+            "frequencia": 286
         },
         {
             "numero": 2,
-            "frequencia": 264
+            "frequencia": 293
         },
         {
             "numero": 3,
-            "frequencia": 246
-        },
-        {
-            "numero": 4,
-            "frequencia": 280
-        },
-        {
-            "numero": 5,
-            "frequencia": 290
-        },
-        {
-            "numero": 6,
-            "frequencia": 263
-        },
-        {
-            "numero": 7,
-            "frequencia": 247
-        },
-        {
-            "numero": 8,
-            "frequencia": 266
-        },
-        {
-            "numero": 9,
-            "frequencia": 250
-        },
-        {
-            "numero": 10,
-            "frequencia": 310
-        },
-        {
-            "numero": 11,
-            "frequencia": 274
-        },
-        {
-            "numero": 12,
-            "frequencia": 253
-        },
-        {
-            "numero": 13,
-            "frequencia": 269
-        },
-        {
-            "numero": 14,
-            "frequencia": 256
-        },
-        {
-            "numero": 15,
-            "frequencia": 226
-        },
-        {
-            "numero": 16,
-            "frequencia": 276
-        },
-        {
-            "numero": 17,
-            "frequencia": 276
-        },
-        {
-            "numero": 18,
-            "frequencia": 255
-        },
-        {
-            "numero": 19,
-            "frequencia": 249
-        },
-        {
-            "numero": 20,
-            "frequencia": 259
-        },
-        {
-            "numero": 21,
-            "frequencia": 223
-        },
-        {
-            "numero": 22,
-            "frequencia": 243
-        },
-        {
-            "numero": 23,
-            "frequencia": 283
-        },
-        {
-            "numero": 24,
-            "frequencia": 262
-        },
-        {
-            "numero": 25,
-            "frequencia": 249
-        },
-        {
-            "numero": 26,
-            "frequencia": 222
-        },
-        {
-            "numero": 27,
-            "frequencia": 279
-        },
-        {
-            "numero": 28,
-            "frequencia": 277
-        },
-        {
-            "numero": 29,
-            "frequencia": 270
-        },
-        {
-            "numero": 30,
-            "frequencia": 285
-        },
-        {
-            "numero": 31,
-            "frequencia": 248
-        },
-        {
-            "numero": 32,
-            "frequencia": 281
-        },
-        {
-            "numero": 33,
-            "frequencia": 282
-        },
-        {
-            "numero": 34,
-            "frequencia": 280
-        },
-        {
-            "numero": 35,
-            "frequencia": 284
-        },
-        {
-            "numero": 36,
             "frequencia": 273
         },
         {
-            "numero": 37,
-            "frequencia": 284
+            "numero": 4,
+            "frequencia": 314
         },
         {
-            "numero": 38,
-            "frequencia": 276
+            "numero": 5,
+            "frequencia": 320
         },
         {
-            "numero": 39,
-            "frequencia": 253
+            "numero": 6,
+            "frequencia": 294
         },
         {
-            "numero": 40,
-            "frequencia": 246
+            "numero": 7,
+            "frequencia": 275
         },
         {
-            "numero": 41,
+            "numero": 8,
+            "frequencia": 292
+        },
+        {
+            "numero": 9,
             "frequencia": 280
         },
         {
-            "numero": 42,
+            "numero": 10,
+            "frequencia": 344
+        },
+        {
+            "numero": 11,
+            "frequencia": 310
+        },
+        {
+            "numero": 12,
+            "frequencia": 279
+        },
+        {
+            "numero": 13,
+            "frequencia": 304
+        },
+        {
+            "numero": 14,
+            "frequencia": 287
+        },
+        {
+            "numero": 15,
+            "frequencia": 264
+        },
+        {
+            "numero": 16,
+            "frequencia": 305
+        },
+        {
+            "numero": 17,
+            "frequencia": 312
+        },
+        {
+            "numero": 18,
             "frequencia": 281
         },
         {
-            "numero": 43,
-            "frequencia": 274
+            "numero": 19,
+            "frequencia": 287
         },
         {
-            "numero": 44,
+            "numero": 20,
+            "frequencia": 286
+        },
+        {
+            "numero": 21,
+            "frequencia": 246
+        },
+        {
+            "numero": 22,
+            "frequencia": 263
+        },
+        {
+            "numero": 23,
+            "frequencia": 309
+        },
+        {
+            "numero": 24,
+            "frequencia": 294
+        },
+        {
+            "numero": 25,
+            "frequencia": 293
+        },
+        {
+            "numero": 26,
+            "frequencia": 243
+        },
+        {
+            "numero": 27,
+            "frequencia": 312
+        },
+        {
+            "numero": 28,
+            "frequencia": 303
+        },
+        {
+            "numero": 29,
+            "frequencia": 294
+        },
+        {
+            "numero": 30,
+            "frequencia": 311
+        },
+        {
+            "numero": 31,
+            "frequencia": 272
+        },
+        {
+            "numero": 32,
+            "frequencia": 312
+        },
+        {
+            "numero": 33,
+            "frequencia": 316
+        },
+        {
+            "numero": 34,
+            "frequencia": 319
+        },
+        {
+            "numero": 35,
+            "frequencia": 310
+        },
+        {
+            "numero": 36,
+            "frequencia": 299
+        },
+        {
+            "numero": 37,
+            "frequencia": 318
+        },
+        {
+            "numero": 38,
+            "frequencia": 315
+        },
+        {
+            "numero": 39,
+            "frequencia": 283
+        },
+        {
+            "numero": 40,
             "frequencia": 278
         },
         {
+            "numero": 41,
+            "frequencia": 305
+        },
+        {
+            "numero": 42,
+            "frequencia": 310
+        },
+        {
+            "numero": 43,
+            "frequencia": 307
+        },
+        {
+            "numero": 44,
+            "frequencia": 308
+        },
+        {
             "numero": 45,
-            "frequencia": 260
+            "frequencia": 287
         },
         {
             "numero": 46,
-            "frequencia": 269
+            "frequencia": 309
         },
         {
             "numero": 47,
-            "frequencia": 247
+            "frequencia": 279
         },
         {
             "numero": 48,
-            "frequencia": 248
+            "frequencia": 275
         },
         {
             "numero": 49,
-            "frequencia": 271
+            "frequencia": 300
         },
         {
             "numero": 50,
-            "frequencia": 257
+            "frequencia": 288
         },
         {
             "numero": 51,
-            "frequencia": 267
+            "frequencia": 300
         },
         {
             "numero": 52,
-            "frequencia": 265
+            "frequencia": 297
         },
         {
             "numero": 53,
-            "frequencia": 306
+            "frequencia": 336
         },
         {
             "numero": 54,
-            "frequencia": 270
+            "frequencia": 309
         },
         {
             "numero": 55,
-            "frequencia": 223
+            "frequencia": 255
         },
         {
             "numero": 56,
-            "frequencia": 277
+            "frequencia": 310
         },
         {
             "numero": 57,
-            "frequencia": 253
+            "frequencia": 282
         },
         {
             "numero": 58,
-            "frequencia": 257
+            "frequencia": 281
         },
         {
             "numero": 59,
-            "frequencia": 259
+            "frequencia": 285
         },
         {
             "numero": 60,
-            "frequencia": 247
+            "frequencia": 283
         }
     ],
     "mais_frequentes": {
-        "10": 310,
-        "53": 306,
-        "5": 290,
-        "30": 285,
-        "35": 284,
-        "37": 284,
-        "23": 283,
-        "33": 282,
-        "42": 281,
-        "32": 281
+        "10": 344,
+        "53": 336,
+        "5": 320,
+        "34": 319,
+        "37": 318,
+        "33": 316,
+        "38": 315,
+        "4": 314,
+        "27": 312,
+        "17": 312
     }
 }
