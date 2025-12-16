@@ -15,11 +15,17 @@
         <div class="brand">
           <h1>AnalisaMega</h1>
           <p class="tagline">Estatísticas • Números mais sorteados da Mega-Sena</p>
+
+          <!-- NOVO: seletor de loteria (não interfere em nada existente) -->
+          <div class="lottery-switch" aria-label="Selecionar loteria">
+            <button class="lottery-btn active" data-loteria="mega">Mega-Sena</button>
+            <button class="lottery-btn" data-loteria="lotofacil">Lotofácil</button>
+          </div>
         </div>
 
         <div class="controls">
           <div class="search">
-            <label for="search" class="vh">Buscar número (1 a 60)</label>
+            <label for="search" class="vh">Buscar número</label>
             <input id="search" type="number" min="1" max="60" placeholder="Buscar número (1 a 60)…">
           </div>
 
@@ -33,8 +39,8 @@
     </header>
 
     <main class="layout" role="main">
-      <aside class="card summary" aria-labelledby="summaryTitle">
-        <h2 id="summaryTitle">Resumo</h2>
+      <aside class="card summary">
+        <h2>Resumo</h2>
         <p id="totalInfo">Carregando dados…</p>
         <div class="legend">
           <div><span class="swatch swatch-1"></span>Frequentemente sorteados</div>
@@ -42,15 +48,15 @@
         </div>
       </aside>
 
-      <section class="card topcard" aria-labelledby="topTitle">
-        <h2 id="topTitle">🎯 Top 10 (Frequência + %)</h2>
-        <ul id="top10" aria-live="polite"></ul>
+      <section class="card topcard">
+        <h2>🎯 Top 10 (Frequência + %)</h2>
+        <ul id="top10"></ul>
       </section>
 
-      <section class="card chartcard" aria-labelledby="chartTitle">
-        <h2 id="chartTitle">📈 Frequência Geral (1–60)</h2>
+      <section class="card chartcard">
+        <h2>📈 Frequência Geral</h2>
         <div class="chart-wrap">
-          <canvas id="grafico" role="img" aria-label="Gráfico de barras da frequência dos números"></canvas>
+          <canvas id="grafico"></canvas>
         </div>
       </section>
     </main>

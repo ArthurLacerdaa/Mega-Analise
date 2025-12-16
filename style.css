@@ -1,4 +1,3 @@
-
 :root{
   --bg: linear-gradient(180deg,#0b1020 0%, #061018 100%);
   --surface: rgba(255,255,255,0.06);
@@ -239,5 +238,55 @@ body.light .chartcard {
   #top10 li .meta {
     text-align: right;
     width: 100%;
+  }
+}
+
+/* ===== Seletor de Loteria ===== */
+
+.lottery-switch{
+  margin-top: 14px;
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+  box-shadow: var(--shadow);
+}
+
+.lottery-btn{
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: transparent;
+  transition: all .18s ease;
+}
+
+.lottery-btn:hover{
+  color: var(--text);
+  background: rgba(255,255,255,0.08);
+}
+
+.lottery-btn.active{
+  color: #06231d;
+  background: linear-gradient(180deg,var(--accent), #00bfa0);
+  box-shadow: 0 6px 18px rgba(0,230,184,0.35);
+}
+
+body.light .lottery-btn.active{
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 480px){
+  .lottery-switch{
+    width: 100%;
+    justify-content: space-between;
   }
 }

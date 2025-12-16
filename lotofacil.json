@@ -1,0 +1,105 @@
+{
+  "totalSorteios": 3563,
+  "numeros": [
+    {
+      "numero": 1,
+      "frequencia": 2155
+    },
+    {
+      "numero": 2,
+      "frequencia": 2131
+    },
+    {
+      "numero": 3,
+      "frequencia": 2153
+    },
+    {
+      "numero": 4,
+      "frequencia": 2149
+    },
+    {
+      "numero": 5,
+      "frequencia": 2137
+    },
+    {
+      "numero": 6,
+      "frequencia": 2089
+    },
+    {
+      "numero": 7,
+      "frequencia": 2106
+    },
+    {
+      "numero": 8,
+      "frequencia": 2063
+    },
+    {
+      "numero": 9,
+      "frequencia": 2128
+    },
+    {
+      "numero": 10,
+      "frequencia": 2211
+    },
+    {
+      "numero": 11,
+      "frequencia": 2192
+    },
+    {
+      "numero": 12,
+      "frequencia": 2147
+    },
+    {
+      "numero": 13,
+      "frequencia": 2170
+    },
+    {
+      "numero": 14,
+      "frequencia": 2166
+    },
+    {
+      "numero": 15,
+      "frequencia": 2125
+    },
+    {
+      "numero": 16,
+      "frequencia": 2042
+    },
+    {
+      "numero": 17,
+      "frequencia": 2100
+    },
+    {
+      "numero": 18,
+      "frequencia": 2124
+    },
+    {
+      "numero": 19,
+      "frequencia": 2124
+    },
+    {
+      "numero": 20,
+      "frequencia": 2222
+    },
+    {
+      "numero": 21,
+      "frequencia": 2116
+    },
+    {
+      "numero": 22,
+      "frequencia": 2135
+    },
+    {
+      "numero": 23,
+      "frequencia": 2084
+    },
+    {
+      "numero": 24,
+      "frequencia": 2164
+    },
+    {
+      "numero": 25,
+      "frequencia": 2212
+    }
+  ]
+}
