@@ -35,4 +35,42 @@ O objetivo do projeto é transformar dados brutos em informações acessíveis, 
 - **Dados:** Arquivos CSV e JSON
 - **Hospedagem:** Vercel
 
+---
 
+## Estrutura do Projeto
+
+Mega-Analise
+├── analisar_mega.py
+├── baixar_mega.py
+├── app.js
+├── index.html
+├── style.css
+├── mega.csv
+├── lotofacil.json
+├── stats.json
+└── README.md
+
+---
+
+## Como Executar Localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/ArthurLacerdaa/Mega-Analise.git
+
+Acesse a pasta do projeto:
+
+cd Mega-Analise
+
+
+Abra o arquivo index.html no navegador
+(ou utilize um servidor local de sua preferência)
+
+Contribuições
+
+Contribuições são bem-vindas.
+Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões de melhorias, correções ou novas funcionalidades.
+
+Autor
+
+Desenvolvido por Arthur Lacerda
