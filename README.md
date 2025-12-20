@@ -62,15 +62,17 @@ Acesse a pasta do projeto:
 
 cd Mega-Analise
 
-
 Abra o arquivo index.html no navegador
-(ou utilize um servidor local de sua preferência)
 
-Contribuições
+---
+
+##Contribuições
 
 Contribuições são bem-vindas.
 Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões de melhorias, correções ou novas funcionalidades.
 
-Autor
+---
+
+##Autor
 
 Desenvolvido por Arthur Lacerda
