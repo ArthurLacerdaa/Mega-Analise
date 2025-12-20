@@ -16,7 +16,6 @@
           <h1>AnalisaMega</h1>
           <p class="tagline">Estatísticas • Números mais sorteados da Mega-Sena</p>
 
-          <!-- NOVO: seletor de loteria (não interfere em nada existente) -->
           <div class="lottery-switch" aria-label="Selecionar loteria">
             <button class="lottery-btn active" data-loteria="mega">Mega-Sena</button>
             <button class="lottery-btn" data-loteria="lotofacil">Lotofácil</button>
@@ -39,6 +38,8 @@
     </header>
 
     <main class="layout" role="main">
+
+
       <aside class="card summary">
         <h2>Resumo</h2>
         <p id="totalInfo">Carregando dados…</p>
@@ -59,6 +60,41 @@
           <canvas id="grafico"></canvas>
         </div>
       </section>
+
+            <!-- ========================= -->
+      <!-- GERADOR DE JOGOS (FINAL) -->
+      <!-- ========================= -->
+
+     <section class="card generator-card" data-loteria="mega">
+  <h2>🎲 Gerador de Jogos • Mega-Sena</h2>
+
+  <p class="generator-desc">
+    Gere um jogo equilibrado com base nas estatísticas acima.
+    Os números mais frequentes têm prioridade, sem excluir os menos sorteados.
+  </p>
+
+  <button id="gerarMega" class="generator-btn">
+    🎯 Gerar jogo inteligente
+  </button>
+
+  <div id="resultado-mega" class="resultado-jogo"></div>
+</section>
+
+<section class="card generator-card" data-loteria="lotofacil">
+  <h2>🎲 Gerador de Jogos • Lotofácil</h2>
+
+  <p class="generator-desc">
+    Gere um jogo equilibrado com base nas estatísticas acima.
+    Os números mais frequentes têm prioridade, sem excluir os menos sorteados.
+  </p>
+
+  <button id="gerarLotofacil" class="generator-btn">
+    🎯 Gerar jogo inteligente
+  </button>
+
+  <div id="resultado-lotofacil" class="resultado-jogo"></div>
+</section>
+
     </main>
 
     <footer class="footer">

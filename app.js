@@ -1,27 +1,35 @@
-/* app.js - original preservado + suporte mínimo a múltiplas loterias */
+/* app.js - original preservado + gerador de jogos */
 
 const CHART_ID = "grafico";
 let chartInstance = null;
 
-/* ===== NOVO: configuração de loteria ===== */
-let LOTERIA_ATUAL = "mega";
-
+/* ===== configuração de loteria ===== */
 const LOTERIAS = {
   mega: {
     arquivo: "stats.json",
     min: 1,
     max: 60,
-    titulo: "Estatísticas • Números mais sorteados da Mega-Sena"
+    titulo: "Estatísticas • Números mais sorteados da Mega-Sena",
+    tamanhoJogo: 6
   },
   lotofacil: {
     arquivo: "lotofacil.json",
     min: 1,
     max: 25,
-    titulo: "Estatísticas • Números mais sorteados da Lotofácil"
+    titulo: "Estatísticas • Números mais sorteados da Lotofácil",
+    tamanhoJogo: 15
   }
 };
-/* ======================================= */
 
+/* ===== estado inicial sincronizado com o HTML ===== */
+const btnAtivoInicial = document.querySelector(".lottery-btn.active");
+let LOTERIA_ATUAL = btnAtivoInicial?.dataset.loteria || "mega";
+
+/* ================================================ */
+
+let FREQ_MAP_ATUAL = {}; // cache das frequências
+
+/* ===== utilitários ===== */
 function buildFreqMap(dados) {
   const map = {};
   if (!dados) return map;
@@ -36,7 +44,6 @@ function buildFreqMap(dados) {
   return map;
 }
 
-/* ===== NOVO: range dinâmico ===== */
 function ensureRange(freqMap, min, max) {
   const labels = [];
   const freqs = [];
@@ -46,7 +53,6 @@ function ensureRange(freqMap, min, max) {
   }
   return { labels, freqs };
 }
-/* ================================= */
 
 function destroyChart() {
   if (chartInstance) {
@@ -69,6 +75,7 @@ function chartColors() {
   };
 }
 
+/* ================== CARREGAMENTO PRINCIPAL ================== */
 async function carregar() {
   try {
     const cfg = LOTERIAS[LOTERIA_ATUAL];
@@ -77,10 +84,12 @@ async function carregar() {
     const dados = await res.json();
 
     const freqMap = buildFreqMap(dados);
+    FREQ_MAP_ATUAL = freqMap;
+
     const { labels, freqs } = ensureRange(freqMap, cfg.min, cfg.max);
 
     const sumFreqs = freqs.reduce((s, v) => s + v, 0);
-    const totalSorteios = Math.round(sumFreqs / (LOTERIA_ATUAL === "mega" ? 6 : 15));
+    const totalSorteios = Math.round(sumFreqs / cfg.tamanhoJogo);
     const pcts = freqs.map(f => (f / totalSorteios) * 100);
 
     document.querySelector(".tagline").textContent = cfg.titulo;
@@ -97,39 +106,38 @@ async function carregar() {
 
     const C = chartColors();
 
-   chartInstance = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels,
-    datasets: [{
-      data: freqs,
-      backgroundColor: labels.map(() => C.bg),
-      borderColor: labels.map(() => C.border),
-      borderWidth: 1,
-      borderRadius: 8
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          label: (ctx) => {
-            const freq = ctx.raw;
-            const pct = pcts[ctx.dataIndex] ?? 0;
-            return [
-              `Frequência: ${freq}`,
-              `Porcentagem: ${pct.toFixed(2)}%`
-            ];
+    chartInstance = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [{
+          data: freqs,
+          backgroundColor: labels.map(() => C.bg),
+          borderColor: labels.map(() => C.border),
+          borderWidth: 1,
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const freq = ctx.raw;
+                const pct = pcts[ctx.dataIndex] ?? 0;
+                return [
+                  `Frequência: ${freq}`,
+                  `Porcentagem: ${pct.toFixed(2)}%`
+                ];
+              }
+            }
           }
         }
       }
-    }
-  }
-});
-
+    });
 
     const ul = document.getElementById("top10");
     ul.innerHTML = "";
@@ -160,12 +168,14 @@ async function carregar() {
 
     document.getElementById("refresh").onclick = carregar;
 
+    atualizarVisibilidadeGerador();
+
   } catch (e) {
     console.error("Erro:", e);
   }
 }
 
-/* ===== NOVO: troca de loteria ===== */
+/* ========== TROCA DE LOTERIA ========== */
 document.querySelectorAll(".lottery-btn").forEach(btn => {
   btn.onclick = () => {
     document.querySelectorAll(".lottery-btn").forEach(b => b.classList.remove("active"));
@@ -174,6 +184,58 @@ document.querySelectorAll(".lottery-btn").forEach(btn => {
     carregar();
   };
 });
-/* ================================= */
+
+/* ================= GERADOR DE JOGOS ================= */
+
+function sorteioPonderado(numeros) {
+  const total = numeros.reduce((s, n) => s + n.freq, 0);
+  let r = Math.random() * total;
+
+  for (const n of numeros) {
+    r -= n.freq;
+    if (r <= 0) return n.num;
+  }
+}
+
+function gerarJogoPorLoteria(tipo) {
+  if (LOTERIA_ATUAL !== tipo) return;
+
+  const cfg = LOTERIAS[tipo];
+
+  const lista = [];
+  for (let i = cfg.min; i <= cfg.max; i++) {
+    lista.push({
+      num: i,
+      freq: FREQ_MAP_ATUAL[i] ?? 1
+    });
+  }
+
+  const jogo = new Set();
+  while (jogo.size < cfg.tamanhoJogo) {
+    jogo.add(sorteioPonderado(lista));
+  }
+
+  const resultado = [...jogo].sort((a, b) => a - b).join(" - ");
+
+  const el =
+    tipo === "mega"
+      ? document.getElementById("resultado-mega")
+      : document.getElementById("resultado-lotofacil");
+
+  el.textContent = resultado;
+}
+
+document.getElementById("gerarMega")?.addEventListener("click", () => gerarJogoPorLoteria("mega"));
+document.getElementById("gerarLotofacil")?.addEventListener("click", () => gerarJogoPorLoteria("lotofacil"));
+
+function atualizarVisibilidadeGerador() {
+  document.querySelectorAll(".generator-card").forEach(card => {
+    card.style.display =
+      card.dataset.loteria === LOTERIA_ATUAL ? "block" : "none";
+  });
+}
+
+/* ======================================================= */
 
 carregar();
+atualizarVisibilidadeGerador();
