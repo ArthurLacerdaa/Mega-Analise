@@ -66,13 +66,13 @@ Abra o arquivo index.html no navegador
 
 ---
 
-##Contribuições
+## Contribuições
 
 Contribuições são bem-vindas.
 Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões de melhorias, correções ou novas funcionalidades.
 
 ---
 
-##Autor
+## Autor
 
 Desenvolvido por Arthur Lacerda
